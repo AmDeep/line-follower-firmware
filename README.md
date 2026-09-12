@@ -1,5 +1,11 @@
 # Line Follower Robot Firmware
 
+## Engineering evidence
+
+- `tools/line_controller_sim.py` converts five reflectance readings into a weighted line error and left/right PWM commands.
+- Run `python tools/line_controller_sim.py 100 500 900 500 100` to inspect steering behavior.
+- The control interface is kept separate from sensor scaling and motor actuation so tuning remains approachable.
+
 ## Objective
 
 Provide a clean, tunable proportional controller for a differential-drive robot that follows a dark line on a light surface using an array of five reflectance sensors. The code is structured so that integral and derivative terms can be added later without rewriting the sensor or motor layers.
